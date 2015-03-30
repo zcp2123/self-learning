@@ -1,10 +1,6 @@
 (function() {
 
-    // 外部函数声明
-    function sayName() {
-        console.log(this.name);
-    }
-    // 对象的构造函数：
+    // 对象的构造函数：（构造函数模式创建对象的问题：没有复用，封装性不好）
     function Person(name, age, job) {
         this.name = name;
         this.age = age;
@@ -15,6 +11,11 @@
         this.sayAge = function() {
             console.log(this.age);
         }
+    }
+
+    // 外部函数声明
+    function sayName() {
+        console.log(this.name);
     }
 
     // 构造函数的实例：
@@ -39,14 +40,14 @@
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 
-    // 对象的原型构造：
+    // 对象的原型构造：（原型模式创建对象的问题：1、不能传参 2、共享问题）
     function Book() {}
     Book.prototype = {
 
         // 字面量初始化原型属性和方法是，constructor 不在指向原型，所以要强行指回来，
         // 但是这种修改方式会使 constructor 的 enumerable 变为 true，默认为false
+        
         //constructor: Book,   
-
         name: "nodeJs",
         author: "jacksonTian",
         year: 2004,
@@ -75,10 +76,34 @@
         }
     }
 
+//-------------------------------------------------------------------------------------------------------------------------------------
 
-    
-    
+    // 组合使用构造函数模式与原型模式：（最优选择）
+    function Athlete(name, age, level) {   // 不共享的可传参的对象属性和方法
+        this.name = name;
+        this.age = age;
+        this.level = level;
+        this.friends = ["whw", "iGrado"];
+    }
+   
+    if (typeof this.sayName != "function") {   // 原型中的属性和方法可以共享
+        Athlete.prototype = {   
+            constructor : Athlete,
+            sayName : function() {
+                console.log(this.name);
+            }
+        }
+    }
 
+    var athlete1 = new Athlete("HongweiWang", 25, "super");
+    var athlete2 = new Athlete("BoZhang", 24, "middle");
+
+    athlete1.friends.push("ZCY");
+    console.log(athlete1.friends);   // ["whw", "iGrado", "ZCY"]
+    console.log(athlete2.friends);   // ["whw", "iGrado"]
+    console.log(athlete1.sayName === athlete2.sayName);   // true
+    console.log(athlete1.sayName());   // HongweiWang
+    console.log(athlete2.sayName());   // BoZhang
 
 
 })();
