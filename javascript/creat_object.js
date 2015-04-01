@@ -10,7 +10,7 @@
         // 函数声明放在构造函数之内，会使每次实例化的对象都重新创建一个Function
         this.sayAge = function() {
             console.log(this.age);
-        }
+        };
     }
 
     // 外部函数声明
@@ -27,8 +27,8 @@
 
     Person("iGrado", 28, "doctor");
     window.sayname();   // iGrado
-
-    var o = new Object();
+ 
+    var o = {};
     Person.call(o, "HongweiWang", 20, "student");
     o.sayname();   // HongweiWang
 
@@ -63,14 +63,14 @@
     var descriptor = Object.getOwnPropertyDescriptor(Book.prototype, "constructor");
     console.log(descriptor.enumerable);   // false
 
-    var book1 = new Book;
+    var book1 = new Book();
     book1.pages = 280;
 
     for(var i in book1) {
         console.log(i);   // pages、name、author、year、edition （不包含constructor 属性）
     }
     
-    for(var i in book1) {
+    for (var i in book1) {
         if (book1.hasOwnProperty(i)) {
         console.log(i);   // pages（过滤了原型的属性和方法）
         }
@@ -87,12 +87,12 @@
     }
    
     if (typeof this.sayName != "function") {   // 原型中的属性和方法可以共享
-        Athlete.prototype = {   
+        Athlete.prototype = {  
             constructor : Athlete,
             sayName : function() {
                 console.log(this.name);
             }
-        }
+        };
     }
 
     var athlete1 = new Athlete("HongweiWang", 25, "super");
@@ -102,8 +102,9 @@
     console.log(athlete1.friends);   // ["whw", "iGrado", "ZCY"]
     console.log(athlete2.friends);   // ["whw", "iGrado"]
     console.log(athlete1.sayName === athlete2.sayName);   // true
-    console.log(athlete1.sayName());   // HongweiWang
-    console.log(athlete2.sayName());   // BoZhang
+    athlete1.sayName();   // HongweiWang
+    athlete2.sayName();   // BoZhang
 
 
+console.log("---------------------------------------------------");
 })();

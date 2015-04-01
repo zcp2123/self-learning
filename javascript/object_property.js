@@ -1,11 +1,11 @@
 (function() {
 
     var person =  {   // 字面量创建一个对象
-        name: "whw",
-        _age: 25,
-        job: "front ends",
+        name : "whw",
+        _age : 25,
+        job : "front ends",
 
-        sayName: function() {
+        sayName : function() {
             console.log(this.name);
         }
     };
@@ -15,8 +15,8 @@
   
     // 对象的数据属性的方法：
     Object.defineProperty(person, "name", { 
-        Enumerable: false,   // 对象的某个属性不能通过 for-in 循环返回属性
-        writable: false,   // 对象的某个属性的值不能被修改
+        enumerable : false,   // 对象的某个属性不能通过 for-in 循环返回属性
+        writable : false   // 对象的某个属性的值不能被修改
     }); 
 
     person.name = "iGrado";
@@ -43,20 +43,20 @@
     // 用 Object.defineProperties() 方法给对象定义多个属性（2个数据属性，1个访问器属性）：
     var book = {
         _year : 2004,
-        edition: 1
+        edition : 1
     };
     Object.defineProperties(book, {
-        name: {
-            value: "nodeJs"
+        name : {
+            value : "nodeJs"
         },
         author:{
-            value: "jacksonTian"
+            value : "jacksonTian"
         },
-        year:{
-            get: function() {
+        year : {
+            get : function() {
                 return this._year;
             },
-            set: function(num) {
+            set : function(num) {
                 if (num > 2004) {
                     this._year = num;   
                     this.edition += num - 2004;
@@ -72,15 +72,15 @@
 
     // 用 Object.getOwnPropertyDescriptor() 方法读取某个对象的某个属性的特性，返回一个对象
     // 读取数据属性：
-    var descriptor = Object.getOwnPropertyDescriptor(book, "_year");
-    console.log(descriptor.value);   // 2008
-    console.log(typeof descriptor.get);   // undefined
+    var descriptor1 = Object.getOwnPropertyDescriptor(book, "_year");
+    console.log(descriptor1.value);   // 2008
+    console.log(typeof descriptor1.get);   // undefined
 
     // 读取访问其属性：
-    var descriptor = Object.getOwnPropertyDescriptor(book, "year");
-    console.log(descriptor.value);   // undefined
-    console.log(typeof descriptor.get);   // function
-    console.log(typeof descriptor.set);   // function
+    var descriptor2 = Object.getOwnPropertyDescriptor(book, "year");
+    console.log(descriptor2.value);   // undefined
+    console.log(typeof descriptor2.get);   // function
+    console.log(typeof descriptor2.set);   // function
 
-    
+console.log("---------------------------------------------------");
 })();
