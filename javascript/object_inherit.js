@@ -6,11 +6,11 @@
     function SuperType(name) {
         this.name = name;
         this.color = ["red", "orange", "gray"];
-        this.sayColor = function() {
+        this.sayColor = function () {
             console.log(this.color);
         };
     }
-    SuperType.prototype.sayName = function() {
+    SuperType.prototype.sayName = function () {
         console.log(this.name);
     };
 
@@ -22,7 +22,7 @@
     SubType.prototype = new SuperType();
     SubType.prototype.constructor = SubType;
 
-    SubType.prototype.sayAge = function() {
+    SubType.prototype.sayAge = function () {
         console.log(this.age);
     };
 
@@ -47,7 +47,7 @@
         this.name = name;
         this.information = ["male", "25", "student"];
     }
-    Person.prototype.sayName = function() {
+    Person.prototype.sayName = function () {
         console.log(this.name);
     };
 
@@ -71,7 +71,7 @@
 
     inheritPrototype(Athlete, Person);
 
-    Athlete.prototype.sayLevel = function() {
+    Athlete.prototype.sayLevel = function () {
         console.log(this.level);
     };
 

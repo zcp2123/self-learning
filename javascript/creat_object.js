@@ -8,7 +8,7 @@
         // 将函数声明放到构造函数外面，会使实例化的对象调用一个函数
         this.sayname = sayName;
         // 函数声明放在构造函数之内，会使每次实例化的对象都重新创建一个Function
-        this.sayAge = function() {
+        this.sayAge = function () {
             console.log(this.age);
         };
     }
@@ -70,7 +70,7 @@
         console.log(i);   // pages、name、author、year、edition （不包含constructor 属性）
     }
     
-    for (var i in book1) {
+    for (var a in book1) {
         if (book1.hasOwnProperty(i)) {
         console.log(i);   // pages（过滤了原型的属性和方法）
         }
@@ -87,9 +87,9 @@
     }
    
     if (typeof this.sayName != "function") {   // 原型中的属性和方法可以共享
-        Athlete.prototype = {  
+        Athlete.prototype = {
             constructor : Athlete,
-            sayName : function() {
+            sayName : function () {
                 console.log(this.name);
             }
         };

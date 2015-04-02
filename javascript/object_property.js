@@ -5,7 +5,7 @@
         _age : 25,
         job : "front ends",
 
-        sayName : function() {
+        sayName : function () {
             console.log(this.name);
         }
     };
@@ -14,10 +14,10 @@
  //-------------------------------------------------------------------------------------------------------------------------------------   
   
     // 对象的数据属性的方法：
-    Object.defineProperty(person, "name", { 
+    Object.defineProperty(person, "name", {
         enumerable : false,   // 对象的某个属性不能通过 for-in 循环返回属性
         writable : false   // 对象的某个属性的值不能被修改
-    }); 
+    });
 
     person.name = "iGrado";
     person.sayName();   // whw
@@ -25,17 +25,17 @@
  //-------------------------------------------------------------------------------------------------------------------------------------   
 
     // 对象的访问器属性的方法：
-    person.__defineGetter__("age", function(){ 
+    person.__defineGetter__("age", function() {
         return this._age;
     });
-    person.__defineSetter__("age", function(newValue){ 
+    person.__defineSetter__("age", function(newValue) {
         if (newValue > 25) {
-            this._age = newValue;   
+            this._age = newValue;
             this.learnYears = newValue - 25;
         }
     });
         
-    person.age = 28;   
+    person.age = 28;
     console.log(person.learnYears);   // 3
  
  //-------------------------------------------------------------------------------------------------------------------------------------   
@@ -53,14 +53,14 @@
             value : "jacksonTian"
         },
         year : {
-            get : function() {
+            get : function () {
                 return this._year;
             },
-            set : function(num) {
+            set : function (num) {
                 if (num > 2004) {
-                    this._year = num;   
+                    this._year = num;
                     this.edition += num - 2004;
-                }  
+                }
             }
         }
     });
