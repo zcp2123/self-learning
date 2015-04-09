@@ -10,7 +10,7 @@
         return result;
     }
 
-    b = a();
+    var b = a();
     for (var k = 0; k < b.length; k++) {
         console.log(b[k]());
         /* 遍历数组会输出10个10
@@ -18,6 +18,7 @@
         即 result 和 i 变量，即当 i 最后一次被修改为10之后，匿名函数中保存的 i 的值也都被修改为10了。
         */
     }
+    b = null;
 
     // fix闭包的问题1：
     function c () {
@@ -32,7 +33,7 @@
         return result;
     }
 
-    d = c();
+    var d = c();
     for (var j = 0; j < d.length; j++) {
         console.log(d[j]());
         /* 遍历数组会输出 0-9
@@ -41,6 +42,7 @@
         循环执行的匿名函数中的num参数的值，也就可以输出 0-9 了
         */
     }
+    d = null;
 
     // 闭包的问题2：
     var name  = "the window";
