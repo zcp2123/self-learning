@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Margin</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/clear-float.css">
+</head>
+<body>
+	<h1>清除浮动的方法：</h1>
+	<section class="demo-one">
+		<h2>1、在父级添加 overflow: hidden</h2>
+		<div class="main">
+		    <div class="left">浮动1</div>
+		    <div class="right">浮动2</div>
+		</div>                              
+		<div class="footer"></div>
+	</section>
+	<section class="demo-two">
+		<h2>2、在父级添加 display: table</h2>
+		<div class="main">
+		    <div class="left">浮动1</div>
+		    <div class="right">浮动2</div>
+		</div>                              
+		<div class="footer"></div>
+	</section>
+	<section class="demo-three">
+		<h2>3、使用 :after 伪类：</h2>
+		<div class="main">
+		    <div class="left">浮动1</div>
+		    <div class="right">浮动2</div>
+		</div>                              
+		<div class="footer"></div>
+	</section>
+	<section></section>
+	<section></section>
+</body>
+</html>
