@@ -1,0 +1,45 @@
+/* content common */
+section{
+	margin: 50px;
+}
+h1,
+h2{
+	margin-bottom: 20px;
+}
+.main,
+.footer{
+	padding: 10px;
+	width: 300px;
+	background: lightyellow;
+}
+.main div{
+	float: left;
+	width: 100px;
+	height: 50px;
+}
+.main .left{
+	background: lightblue;
+}
+.main .right{
+	background: lightgray;
+}
+.footer{
+	height: 20px;
+	background: lightgreen;
+}
+
+/* 1、在父级添加 overflow: hidden */
+.demo-one .main{
+	overflow: hidden;
+}
+/* 2、在父级添加 display: table */
+.demo-two .main{
+	display: table;
+}
+/* 3、使用 :after 伪类 */
+.demo-three .main:after{
+	content: ' ';
+	display: block;
+	clear: both;
+	*zoom:	 1;   
+}
