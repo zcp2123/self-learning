@@ -62,7 +62,7 @@ em{
     text-decoration: none;
 }
 .demo-three .test_ .container{
-    overflow: hidden;
+    overflow: hidden;   /* 清除浮动 */ 
     background: lightgreen;
 }
 
@@ -72,7 +72,7 @@ em{
     float: left;
 }
 .demo-three .test_1 table{
-    margin: 0 auto;   /* 加入table标签后设置margin */
+    margin: 0 auto;   /* 加入table标签后设置margin自动 */
 }
 
 /* 方法二 */
@@ -80,19 +80,19 @@ em{
     text-align: center;
 }
 .demo-three .test_2 ul li{
-    display: inline;
+    display: inline;   /* 强行设置内联元素 */
     background: #000;
 }
 
 /* 方法三 */
 .demo-three .test_3 ul{
-    position: relative;
+    position: relative;   /* 父级相对定位+浮动 */
     left: 50%;
     float: left;
 }
 .demo-three .test_3 ul li{
-    position: relative;
-    right: 50%;
+    position: relative;   /* 子级相对定位+浮动 */
+    right: 50%;   /* or left: -50%; */
     z-index: 2;
     float: left;
 }
