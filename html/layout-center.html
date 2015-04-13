@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平居中设置</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/layout-center.css">
+</head>
+<body>
+    <h1>水平居中设置:</h1>
+    <h2>分类：</h2>
+    <ol>
+        <li>行内元素</li>
+        <li>定宽-块元素</li>
+        <li>不定宽-块元素</li>
+    </ol>
+    <section class="demo-one">
+        <h3>1、水平居中-行内元素</h3>
+        <p><strong>方法：</strong>如果被设置元素为文本、图片等行内元素时，水平居中是通过给父元素设置 <em> text-align:center </em>来实现的。</p>
+        
+        <div class="test">
+            <h1>已被居中的文本和图片</h1><br />
+            <img src="../images/1.png" alt="heroes">
+        </div>
+    </section>
+    <section class="demo-two">
+        <h3>2、水平居中-定宽块元素</h3>
+        <p><strong>方法：</strong>当被设置元素为块状元素时用 text-align：center 就不起作用了。</p>
+        <p>这时也分两种情况：定宽块状元素和不定宽块状元素。满足定宽和块状两个条件的元素是可以通过设置 <em> margin: 0 auto  </em>来实现居中的。</p>
+            
+        <div class="test">
+            <div class="child">这是一个宽度为200px的div</div>
+        </div>
+    </section>
+    <section class="demo-three">
+        <h3>3、水平居中-不定宽块元素</h3>
+        <p><strong>方法：</strong>不定宽度的块状元素有三种方法居中（这三种方法目前使用的都比多）：</p>
+        <ol>
+            <li><em>加入 table 标签</em></li>
+            <li><em>设置 display: inline </em></li>
+            <li><em>设置 position: relative 和 left:50%</em></li>
+        </ol>
+            
+        <div class="test_ test_1">
+            <h3>方法一：加入 table 标签</h3>
+             <p><strong>代码：</strong>为需要设置的居中的元素外面加入一个 <em> table </em> 标签，再为这个 table 设置 <em> margin: 0 auto </em> </p><br />
+            <div class="container">
+                <table>
+                  <tbody>
+                    <tr><td>
+                        <ul>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#">7</a></li>
+                      </ul>
+                    </td></tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="test_ test_2">
+            <h3>方法二：设置 display: inline </h3>
+             <p><strong>代码：</strong>利用text-align属性特性（text-align:center 对于ie6、7块级和内联级都可以水平居中。其它浏览器内联级元素才可以水平居中，块级无效 ），再为需要设置的居中的元素强制定义为内联 <em> display:inline </em></p><br />
+            <div class="container">
+                <ul>
+                    <li><a href="#">1</a></li><!--  去除inline元素之间的3px空隙的bug
+                --><li><a href="#">2</a></li><!--
+                --><li><a href="#">3</a></li><!--
+                --><li><a href="#">4</a></li><!--
+                --><li><a href="#">5</a></li><!--
+                --><li><a href="#">6</a></li><!--
+                --><li><a href="#">7</a></li>
+                </ul>
+            </div>
+        </div>        
+        <div class="test_ test_3">
+            <h3>方法三：利用浮动的包裹性和相对定位百分比数据值特性</h3>
+             <p><strong>代码：</strong>通过给父元素设置浮动float,再设置父元素的<em> position: relative </em>和<em> left:50% </em>，子元素设置<em> position:relative </em>和<em> left:-50% </em>来实现水平居中</p><br />
+            <div class="container">
+                <ul>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
