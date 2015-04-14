@@ -1,10 +1,8 @@
 /* content common */
-section{
-	margin: 50px;
-}
-h1,
-h2{
-	margin-bottom: 20px;
+section,
+h1,h2,h3,
+ul,ol,li{
+    margin: 10px;
 }
 .main,
 .footer{
@@ -37,9 +35,15 @@ h2{
 	display: table;
 }
 /* 3、使用 :after 伪类 */
-.demo-three .main:after{
-	content: ' ';
+.demo-three .clearfix:after{
+	content: '.';
 	display: block;
 	clear: both;
-	*zoom:	 1;   
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
 }
+.demo-three .clearfix{
+	*zoom: 1;
+}
+

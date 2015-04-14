@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>外边距margin</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/margin.css">
+</head>
+<body>
+    <h1>margin</h1>
+    <section class="demo-one">
+        <h2>1、margin的auto属性值的作用</h2>
+        <p><em>margin: auto;</em> 和<em> margin: 0 auto; </em>能实现水平居中了。因为左右方向的auto值均分了可用空间，使得块元素得以在包含块内居中显示</p>
+        <div class="demo">
+            <p class="one">margin-left: auto; </p>
+        </div>
+        <div class="demo">
+            <p class="two">margin: 0 auto;</p>
+        </div>
+    </section>
+    <section class="demo-two">
+        <h2>2、margin的值为percentage时的计算方法</h2>
+        <p>水平书写模式（默认）下：margin的百分比计算值 = <em>(percentage * 包含块的width)</em></p>
+        <p>非水平书写模式下：margin的百分比计算值 =<em>(percentage * 包含块的height)</em></p>
+        <div class="demo">
+            <pre>包含块（父级）width: 600px;</pre>
+            <p class="one">设定值margin: 10% 5%</p>
+            <p class="two">计算值margin: 60px 30px</p>
+        </div>
+    </section>
+    <section class="demo-three">
+        <h2>3、margin与relative定位的区别</h2>
+        <p><em>margin-bottom</em> 是增加自己与别人的距离</p>
+        <p><em>position: relative; bottom</em> 是相对于自己的位置发生的偏移量</p>
+        <p>如下所示：</p>
+        <div class="demo">
+            <p class="margin-bottom">我是margin-bottom = 20px;</p>
+            <p class="relative-bottom">我是relative定位，bottom = 20px;</p>
+        </div>
+    </section>
+    <section>
+        <h2>4、避免 margin 折叠的方法是：</h2>
+        <ul>
+            <li>浮动</li>
+            <li>非块元素</li>
+            <li>绝对定位</li>
+            <li>overflow</li>
+            <li>设border</li>
+        </ul>
+    </section>
+    <section class="demo-four">
+        <h2>5、负边距的应用：</h2>
+        <div class="demo">
+            <h3>5.1、列表边缘border或padding隐藏</h3>
+            <ul>
+            <li>li 的父级ul 设置 <em>margin-bottom: -1px;</em></li>
+            <li>可以隐藏掉最后一个 li 的 border-bottom</li>
+            <li>同理可以隐藏最右边一个li 的 border-right</li>
+            <li>负边距也适用于隐藏不想出现的 padding</li>
+            </ul>
+        </div>
+        <br />
+        <div class="demo">
+            <h3>5.2、伪等高布局</h3>
+            <p>为需要登高布局的两个兄弟块设定：</p>
+            <pre>
+            <em>margin-bottom:-999px;</em>
+            <em>padding-bottom:999px;</em>
+            </pre>
+            <div class="main">主内容栏<br>占位内容</div>
+            <div class="aside">侧边栏</div>
+        </div>
+        <br />
+        <div class="demo test">
+            <h3>5.3、悬挂</h3>
+            <pre>
+            内容样式：<em>padding-left: 3em;</em>
+            悬挂样式：<em>margin-left: -3em;</em>
+            </pre>
+            <p><strong>悬挂：</strong>内容——看起来很简单，没有浮动，没有绝对定位，没有其它重布局，甚至 HTML 也可以更简单，因为无需对后面那长段做任何处理，所以不需要再加包裹。这样的轻量方式，在一定时候还是有使用价值的，不是么？</p>
+        </div>
+    </section>
+</body>
+</html>
