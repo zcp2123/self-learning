@@ -5,6 +5,7 @@ ul,ol,li{
     margin: 10px;
 }
 section{
+    line-height: 1.2em;
     width: 600px;
     border: 1px solid orange;
 }

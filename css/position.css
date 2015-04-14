@@ -1,0 +1,152 @@
+/* common */
+.basic section,
+.basic h1,h2,h3,
+.basic ul,ol,li{
+    margin: 10px;
+}
+.basic{
+    line-height: 1.2em;
+    width: 600px;
+}
+.basic p{
+    padding-left: 5em;
+}
+.basic strong{
+    display: inline-block;
+    margin-left: -5em;
+    width: 5em;
+}
+.basic em{
+    background: #ddd;
+    color: red;
+}
+
+.example{
+    margin-left: 20px;
+    width:  600px;
+}
+.example h3{
+    float: right;
+}
+.demo{
+    margin-top: 20px;
+    position: relative;
+    width: 600px;
+    background: lightyellow;
+}
+.demo:after{
+    content: ' ';
+    display: block;
+    clear: both;
+    *zoom: 1;
+}
+.demo div{
+    border: 1px solid orange;
+    width: 80px;
+    height: 80px;
+}
+.demo .greenbox{
+    background: lightgreen;
+}
+.demo .bluebox{
+    background: lightblue;
+}
+.demo .purplebox{
+    background: purple;
+}
+.demo .graybox{
+    background: #ddd;
+}
+
+.demo-two .greenfirst{
+    position: absolute;
+    top: 20px;
+    left: 20px;    
+}
+.demo-three .greenfirst{
+    position: absolute;
+    top: 20px;
+    left: 20px;    
+}
+.demo-three .bluefirst{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.demo-four .greenfirst{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.demo-four .bluefirst{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.demo-four .greensecond{
+    position: relative;
+    top: 20px;
+    left: 140px;
+    background: lightgreen;
+}
+.demo-five .greenfirst{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.demo-five .bluefirst{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.demo-five .greensecond{
+    position: relative;
+    top: 20px;
+    left: 140px;
+    background: lightgreen;
+}
+.demo-five .bluesecond{
+    position: relative;
+    top: 40px;
+    left: 160px;
+}
+.demo-six .greenfirst{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.demo-six .bluefirst{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.demo-six .greensecond{
+    position: relative;
+    top: 20px;
+    left: 140px;
+    background: lightgreen;
+}
+.demo-six .bluesecond{
+    position: relative;
+    top: 40px;
+    left: 160px;
+}
+.demo-six .fixed{
+    position: fixed;
+    bottom: 40px;
+    left: 400px;
+    /*z-index: 999;*/
+}
+.demo-seven .position{
+    position: absolute;
+    top: 20px;
+    left: 20px;   
+}
+.demo-seven .float{
+    float: left; 
+    height: 40px;
+}
+.demo-seven .basic{
+    width : 200px;
+    color: #fff;
+}

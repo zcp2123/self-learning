@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>position</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/position.css">
+</head>
+<body>
+    <section class="basic">
+        <h1>position</h1>
+        <ul>
+            <li><p><strong>默认值：</strong>static</p></li>
+            <li><p><strong>适用于：</strong>除display属性定义为 table-column-group 和 table-column之外的所有元素</p></li>
+            <li><p><strong>继承性：</strong>无</p></li>
+            <li><p><strong>动画性：</strong>否</p></li>
+            <li><p><strong>计算值：</strong>指定的值</p></li>
+        </ul>
+        <h2>——取值</h2>
+        <ul>
+            <li><p><strong>stack ：</strong>对象遵循常规流。top，right，bottom，left等属性不会被应用。</p></li>
+            <li><p><strong>relative：</strong><em>对象遵循常规流</em>，并且参照自身在常规流中的位置通过top，right，bottom，left属性进行偏移时不影响常规流中的任何元素。相对定位的元素的位置是相对于它原本应该处在的位置的偏移量，但使用相对定位时，无论是否进行移动，<em>元素仍然占据原来的空间</em>。</p></li>
+            <li><p><strong>absolute：</strong><em>对象脱离常规流</em>，使用top，right，bottom，left等属性进行绝对定位，盒子的偏移位置不影响常规流中的任何元素，其margin不与其他任何margin折叠。<em>绝对定位的元素的位置相对于最近的已定位祖先元素，如果元素没有已定位的祖先元素，那么它的位置相对于最初的包含块。</em></p></li>
+            <li><p><strong>fixed：</strong><em>对象脱离常规流</em>，使用top，right，bottom，left等属性以窗口为参考点进行定位，<em>当出现滚动条时，对象不会随着滚动</em>。</p></li>
+        </ul>
+    </section>
+
+    <h2>——demo</h2>
+    <section class="example">
+        <section class="demo demo-one">
+            <h3>四个div不用任何定位原始的位置如下图：</h3>
+            <div class="greenbox greenfirst">greenbox1 absolute</div>
+            <div class="bluebox bluefirst">bluebox1 absolute</div>
+            <div class="greenbox greensecond">greenbox2 relative</div>
+            <div class="bluebox bluesecond">bluebox2 relative</div>
+        </section>
+        <section class="demo demo-two">
+            <h3>greenbox1 使用绝对定位效果：</h3>
+            <div class="greenbox greenfirst">greenbox1 absolute</div>
+            <div class="bluebox bluefirst">bluebox1 absolute</div>
+            <div class="greenbox greensecond">greenbox2 relative</div>
+            <div class="bluebox bluesecond">bluebox2 relative</div>
+        </section>
+        <section class="demo demo-three">
+            <h3>bluebox1 使用绝对定位效果：</h3>
+            <div class="greenbox greenfirst">greenbox1 absolute</div>
+            <div class="bluebox bluefirst">bluebox1 absolute</div>
+            <div class="greenbox greensecond">greenbox2 relative</div>
+            <div class="bluebox bluesecond">bluebox2 relative</div>
+        </section>
+        <section class="demo demo-four">
+            <h3>greenbox2 使用相对定位效果：</h3>
+            <div class="greenbox greenfirst">greenbox1 absolute</div>
+            <div class="bluebox bluefirst">bluebox1 absolute</div>
+            <div class="greenbox greensecond">greenbox2 relative</div>
+            <div class="bluebox bluesecond">bluebox2 relative</div>
+        </section>
+        <section class="demo demo-five">
+            <h3>bluebox2 使用相对定位效果：</h3>
+            <div class="greenbox greenfirst">greenbox1 absolute</div>
+            <div class="bluebox bluefirst">bluebox1 absolute</div>
+            <div class="greenbox greensecond">greenbox2 relative</div>
+            <div class="bluebox bluesecond">bluebox2 relative</div>
+        </section>
+        <section class="demo demo-six">
+            <h3>graybox 使用固定定位效果：</h3>
+            <div class="greenbox greenfirst">greenbox1 absolute</div>
+            <div class="bluebox bluefirst">bluebox1 absolute</div>
+            <div class="greenbox greensecond">greenbox2 relative</div>
+            <div class="bluebox bluesecond">bluebox2 relative</div>
+            <div class="graybox fixed">garybox fixed定位 left: 400px bottom: 40px;</div>
+        </section>
+        <section class="demo demo-seven">
+            <h3>position与float同时存在于兄弟元素中时：</h3>
+            <div class="greenbox position">position</div>
+            <div class="bluebox float">float</div>
+            <div class="purplebox basic">basic</div>
+        </section>
+    </section>
+</body>
+</html>
