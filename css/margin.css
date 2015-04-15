@@ -1,5 +1,6 @@
-/* content common */
+/* common */
 body{
+    font-family: Arial, 'Microsoft YaHei';
     line-height: 1.5;
 }
 section,
@@ -10,7 +11,7 @@ h3{
     margin: 10px;
 }
 p,
-ul{
+ul,li{
     padding-left: 10px;
 }
 div{
@@ -26,8 +27,14 @@ h3{
     line-height: 1.2;
 }
 em{
-    background: #ddd;
-    color: red;
+    padding: 0 10px 0 5px;
+    background: lightcoral;
+    color: oldlace;
+}
+pre{
+    color: lightyellow;
+    background: #222;
+    max-width: 400px;
 }
 
 /* 1、margin的auto属性值的作用 */

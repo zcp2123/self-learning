@@ -8,6 +8,34 @@
 	<link rel="stylesheet" href="../../css/bfc.css">
 </head>
 <body>
-	
+	<h2>一、BFC布局规则：</h2>
+	<section>
+		<ul>
+			<li>- 内部的Box会在垂直方向，一个接一个地放置。</li>
+			<li>- Box垂直方向的距离由margin决定。<em>属于同一个BFC的两个相邻Box的margin会发生重叠。</em></li>
+			<li>- 每个元素的margin box的左边，与包含块border box的左边相接触(对于从左往右的格式化，否则相反)，即使存在浮动也是如此。</li>
+			<li>- <em>BFC的区域不会与float box重叠。</em></li>
+			<li>- BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+			<li>- <em>计算BFC的高度时，浮动元素也参与计算。</em></li>
+		</ul>
+	</section>
+	<h2>二、如何触发BFC：</h2>
+	<section>
+		<ul>
+			<li><em>- 根元素</em></li>
+			<li><em>- float属性不为none</em></li>
+			<li><em>- position为absolute或fixed</em></li>
+			<li><em>- display为inline-block, table-cell, table-caption, flex, inline-flex</em></li>
+			<li><em>- overflow不为visible</em></li>
+		</ul>
+	</section>
+	<h2>三、BFC有什么作用：</h2>
+	<section>
+		<ul>
+			<li>- 可以包含浮动元素</li>
+			<li>- 不被浮动元素覆盖</li>
+			<li>- 阻止父子元素的margin折叠根元素</li>
+		</ul>
+	</section>
 </body>
 </html>

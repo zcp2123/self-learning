@@ -1,4 +1,8 @@
-/* content common */
+/* common */
+body{
+    font-family: Arial, 'Microsoft YaHei';
+    line-height: 1.5;
+}
 section,
 h1,h2,h3,
 ul,ol,li{
@@ -8,8 +12,14 @@ img{
 	width: 400px;
 }
 em{
-    background: #ddd;
-    color: red;
+    padding: 0 10px 0 5px;
+    background: lightcoral;
+    color: oldlace;
+}
+pre{
+    color: lightyellow;
+    background: #222;
+    max-width: 400px;
 }
 
 .main,

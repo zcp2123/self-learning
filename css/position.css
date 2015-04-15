@@ -1,4 +1,8 @@
 /* common */
+body{
+    font-family: Arial, 'Microsoft YaHei';
+    line-height: 1.5;
+}
 section{
     width: 800px;
 }
@@ -8,7 +12,6 @@ section{
     margin: 10px;
 }
 .basic{
-    line-height: 1.2em;
     width: 800px;
 }
 .basic p{
@@ -20,16 +23,17 @@ section{
     width: 5em;
 }
 .basic em{
-    background: #ddd;
-    color: red;
+    padding: 0 10px 0 5px;
+    background: lightcoral;
+    color: oldlace;
 }
 
 .example{
-    line-height: 1.2em;
     margin: 20px;
     width:  800px;
 }
-.example h3{
+.example h5w{
+    white-space: pre;
     float: right;
 }
 .demo{
@@ -134,12 +138,13 @@ section{
     position: relative;
     top: 40px;
     left: 160px;
+    z-index: 1;
 }
 .demo-six .fixed{
     position: fixed;
     bottom: 40px;
-    left: 400px;
-    /*z-index: 999;*/
+    left: 700px;
+    z-index: 2;
 }
 .demo-seven .position{
     position: absolute;

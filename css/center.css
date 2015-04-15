@@ -1,15 +1,18 @@
 /* common */
+body{
+    font-family: Arial, 'Microsoft YaHei';
+    line-height: 1.5;
+}
 section,
 h1,h2,h3,
 ul,ol,li{
     margin: 10px;
 }
 section{
-    /*line-height: 1.2em;*/
     width: 800px;
     border: 1px solid orange;
 }
-p{  
+p{
     line-height: 1.5;
     padding-left: 3em;
 }
@@ -17,8 +20,9 @@ strong{
     margin-left: -3em;
 }
 em{
-    background: #ddd;
-    color: red;
+    padding: 0 10px 0 5px;
+    background: lightcoral;
+    color: oldlace;
 }
 .test{
     background: lightyellow;
@@ -29,7 +33,6 @@ em{
     text-align: center;   /* 水平居中-行内元素 */
 }
 .demo-one .test span{
-    /*line-height: 2em;*/
     background: lightgreen;
 }
 
@@ -40,7 +43,6 @@ em{
 .demo-two .child{
     margin: 10px auto;   /* 水平居中-定宽块元素 */
     width: 150px;   /* 定宽 */
-    /*line-height: 20px;*/
     background: lightgreen;
 }
 
@@ -49,13 +51,14 @@ em{
     margin: 10px;
     border: 1px dotted #999;
     background: lightyellow;
+    line-height: normal;
 }
 .demo-three .test_ ul,
 .demo-three .test_ ul li{
     margin: 0;
 }
 
-.demo-three .test_ ul li{ 
+.demo-three .test_ ul li{
     background: #000;
     margin-right: 5px;
 }
@@ -65,7 +68,7 @@ em{
     text-decoration: none;
 }
 .demo-three .test_ .container{
-    overflow: hidden;   /* 清除浮动 */ 
+    overflow: hidden;   /* 清除浮动 */
     background: lightgreen;
 }
 

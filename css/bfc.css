@@ -1,0 +1,18 @@
+/* common */
+body{
+    font-family: Arial, 'Microsoft YaHei';
+    line-height: 1.5;
+}
+section,
+h1,h2,h3,
+ul,ol,li{
+    margin: 10px;
+}
+section{
+    width: 800px
+}
+em{
+    padding: 0 10px 0 5px;
+    background: lightcoral;
+    color: oldlace;
+}

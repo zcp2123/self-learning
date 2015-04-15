@@ -14,7 +14,7 @@
 		<li>- 当被浮动的元素的原display属性为inline-table时，display将被修改为<em>table</em></li>
 		<li>- 当被浮动的元素的原display属性为inline | inline-block | run-in | table-* 系时，display将被修改为<em>block</em></li>
 		<li>- 当被浮动的元素的原display属性为<em>flex | inline-flex</em> 或 <em>none</em> 时，<em>float将失效</em>，且元素display属性不变</li>
-		<li>- 其它情况为指定值；</li>
+		<li>- 其它情况为指定值</li>
 		<li><img src="../../images/2.png" alt=""></li>
 		<li><small><i>/*上图来自MDN*/</i></small></li>
 		<li><h3>2、float与position的关系：</h3></li>
@@ -39,19 +39,17 @@
 	</section>
 	<section class="demo-three">
 		<h3>3、使用 :after 伪类：</h3>
-<pre>
-.clearfix:after{
+		<pre><code>  .clearfix:after{
 	content: '.';
 	display: block;
 	clear: both;
 	height: 0;
 	line-height: 0;
 	visibility: hidden;
-}
-.clearfix{
+  }
+  .clearfix{
 	*zoom: 1;
-}
-</pre>
+  }</code></pre>
 		<div class="main clearfix">
 		    <div class="left">浮动1</div>
 		    <div class="right">浮动2</div>

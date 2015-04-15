@@ -1,0 +1,82 @@
+/* common */
+body{
+    font-family: Arial, 'Microsoft YaHei';
+    line-height: 1.5;
+}
+section{
+    width: 800px;
+}
+section,h1,h2,h3{
+    margin: 10px;
+}
+p{
+    padding-left: 3em;
+}
+strong{
+    margin-left: -3em;
+}
+em{
+    padding: 0 10px 0 5px;
+    background: lightcoral;
+    color: oldlace;
+}
+
+/* demo-one */
+.demo{
+    width: 800px;
+    border: 1px solid orange;
+}
+.demo p{
+    padding-left: 5px;
+}
+.demo .comments{
+    padding-left: 1em;
+    border: 1px dashed #f00;
+}
+.demo .demo-one,
+.demo .demo-two{
+    margin: 0 auto;
+    border: 1px dashed #999;
+    width: 700px;
+    background: lightyellow;
+}
+.demo .a{
+    margin: 5px;
+    padding: 16px;
+    border-radius: 5px;
+    background: lightgreen;
+}
+.demo .a .tips{
+    position: absolute;
+    left: 200px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: #fff;
+}
+.demo .b{
+    margin: 5px;
+    padding: 16px;
+    border-radius: 5px;
+    background: #eee;
+}
+
+.demo-one .a{
+    position: relative;
+}
+
+.demo-two .a{
+    position: relative;
+}
+.demo-two .b{
+    position: relative;
+}
+.demo-three .a{
+    position: relative;
+}
+.demo-three .b{
+    position: relative;
+}
+.demo-three .a .tips{
+    z-index: 99;
+}

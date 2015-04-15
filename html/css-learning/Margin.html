@@ -24,7 +24,6 @@
         <p>水平书写模式（默认）下：margin的百分比计算值 = <em>(percentage * 包含块的width)</em></p>
         <p>非水平书写模式下：margin的百分比计算值 =<em>(percentage * 包含块的height)</em></p>
         <div class="demo">
-            <pre>包含块（父级）width: 600px;</pre>
             <p class="one">设定值margin: 10% 5%</p>
             <p class="two">计算值margin: 60px 30px</p>
         </div>
@@ -42,11 +41,11 @@
     <section>
         <h2>4、避免 margin 折叠的方法是：</h2>
         <ul>
-            <li>浮动</li>
-            <li>非块元素</li>
-            <li>绝对定位</li>
-            <li>overflow</li>
-            <li>设border</li>
+            <li>- 浮动</li>
+            <li>- 非块元素</li>
+            <li>- 绝对定位</li>
+            <li>- overflow</li>
+            <li>- 设border</li>
         </ul>
     </section>
     <section class="demo-four">
@@ -64,20 +63,16 @@
         <div class="demo">
             <h3>5.2、伪等高布局</h3>
             <p>为需要登高布局的两个兄弟块设定：</p>
-<pre>
-    <em>margin-bottom:-999px;</em>
-    <em>padding-bottom:999px;</em>
-</pre>
+            <p><em>margin-bottom:-999px;</em></p>
+            <p><em>padding-bottom:999px;</em></p>
             <div class="main">主内容栏<br>占位内容</div>
             <div class="aside">侧边栏</div>
         </div>
         <br />
         <div class="demo test">
             <h3>5.3、悬挂</h3>
-<pre>
-内容样式：<em>padding-left: 3em;</em>
-悬挂样式：<em>margin-left: -3em;</em>
-</pre>
+            <h4>内容样式：<em>padding-left: 3em;</em></h4s>
+            <h4>悬挂样式：<em>margin-left: -3em;</em></h4>
             <p><strong>悬挂：</strong>内容——看起来很简单，没有浮动，没有绝对定位，没有其它重布局，甚至 HTML 也可以更简单，因为无需对后面那长段做任何处理，所以不需要再加包裹。这样的轻量方式，在一定时候还是有使用价值的，不是么？</p>
         </div>
     </section>
