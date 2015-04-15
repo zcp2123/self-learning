@@ -5,11 +5,12 @@ ul,ol,li{
     margin: 10px;
 }
 section{
-    line-height: 1.2em;
-    width: 600px;
+    /*line-height: 1.2em;*/
+    width: 800px;
     border: 1px solid orange;
 }
-p{
+p{  
+    line-height: 1.5;
     padding-left: 3em;
 }
 strong{
@@ -27,8 +28,8 @@ em{
 .demo-one .test{
     text-align: center;   /* 水平居中-行内元素 */
 }
-.demo-one .test h1{
-    line-height: 2em;
+.demo-one .test span{
+    /*line-height: 2em;*/
     background: lightgreen;
 }
 
@@ -39,7 +40,7 @@ em{
 .demo-two .child{
     margin: 10px auto;   /* 水平居中-定宽块元素 */
     width: 150px;   /* 定宽 */
-    line-height: 20px;
+    /*line-height: 20px;*/
     background: lightgreen;
 }
 
