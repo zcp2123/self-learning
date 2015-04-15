@@ -4,6 +4,14 @@ h1,h2,h3,
 ul,ol,li{
     margin: 10px;
 }
+img{
+	width: 400px;
+}
+em{
+    background: #ddd;
+    color: red;
+}
+
 .main,
 .footer{
 	padding: 10px;

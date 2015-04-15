@@ -22,7 +22,8 @@
 }
 
 .example{
-    margin-left: 20px;
+    line-height: 1.2em;
+    margin: 20px;
     width:  600px;
 }
 .example h3{
@@ -61,12 +62,12 @@
 .demo-two .greenfirst{
     position: absolute;
     top: 20px;
-    left: 20px;    
+    left: 20px;
 }
 .demo-three .greenfirst{
     position: absolute;
     top: 20px;
-    left: 20px;    
+    left: 20px;
 }
 .demo-three .bluefirst{
     position: absolute;
@@ -140,13 +141,19 @@
 .demo-seven .position{
     position: absolute;
     top: 20px;
-    left: 20px;   
+    left: 20px;
 }
 .demo-seven .float{
-    float: left; 
+    float: left;
     height: 40px;
 }
 .demo-seven .basic{
     width : 200px;
     color: #fff;
+}
+
+.demo ul li span{
+    position: absolute;
+    padding-left: 10px;
+    color: #8c8c8c;
 }

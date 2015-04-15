@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>浮动与清除浮动</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/normalize.css">
+	<link rel="stylesheet" href="../../css/float.css">
+</head>
+<body>
+	<h1>float</h1>
+	<ul>
+		<li><h3>1、float与display的关系：</h3></li>
+		<li>- 当被浮动的元素的原display属性为inline-table时，display将被修改为<em>table</em></li>
+		<li>- 当被浮动的元素的原display属性为inline | inline-block | run-in | table-* 系时，display将被修改为<em>block</em></li>
+		<li>- 当被浮动的元素的原display属性为<em>flex | inline-flex</em> 或 <em>none</em> 时，<em>float将失效</em>，且元素display属性不变</li>
+		<li>- 其它情况为指定值；</li>
+		<li><img src="../../images/2.png" alt=""></li>
+		<li><small><i>/*上图来自MDN*/</i></small></li>
+		<li><h3>2、float与position的关系：</h3></li>
+		<li>- float在元素使用<em>position: absolute;时不生效</em>。</li>
+	</ul><br />
+	<h2>清除浮动的方法：</h2>
+	<section class="demo-one">
+		<h3>1、在父级添加 overflow: hidden</h3>
+		<div class="main">
+		    <div class="left">浮动1</div>
+		    <div class="right">浮动2</div>
+		</div>
+		<div class="footer"></div>
+	</section>
+	<section class="demo-two">
+		<h3>2、在父级添加 display: table</h3>
+		<div class="main">
+		    <div class="left">浮动1</div>
+		    <div class="right">浮动2</div>
+		</div>
+		<div class="footer"></div>
+	</section>
+	<section class="demo-three">
+		<h3>3、使用 :after 伪类：</h3>
+<pre>
+.clearfix:after{
+	content: '.';
+	display: block;
+	clear: both;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+.clearfix{
+	*zoom: 1;
+}
+</pre>
+		<div class="main clearfix">
+		    <div class="left">浮动1</div>
+		    <div class="right">浮动2</div>
+		</div>
+		<div class="footer"></div>
+	</section>
+</body>
+</html>
