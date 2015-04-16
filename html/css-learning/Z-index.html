@@ -20,35 +20,49 @@
     <section class="demo">
     <h2>demo</h2>
         <h3>- demo-one</h3>
-        <div class="demo-one">
-            <div class="a">
+        <div class="container demo-one">
+            <div class="child a">
                 <p>区域A:relative</p>
                 <div class="tips">我是区域A中的一个absolute且不设置z-index</div>
             </div>
-            <div class="b">
+            <div class="child b">
                 <p>区域B:normal</p>
             </div>
         </div>
         <div class="comments">
             <p><small>demo-one注释：浮层 tips <em>将可以覆盖</em>在其父级元素 A 的兄弟元素 B 之上。</small></p>
-            <p><small>原因是：父级 A 是相对定位，A 高于 B，所以作为 A 的子元素，也可以覆盖 B </small></p>
+            <p><small>原因是：父级 A 是相对定位，A 高于未定位的 B，所以作为 A 的子元素，也可以覆盖 B </small></p>
         </div>
         <h3>- demo-two</h3>
-        <div class="demo-two">
-            <div class="a">
+        <div class="container demo-two">
+            <div class="child a">
                 <p>区域A:relative</p>
                 <div class="tips">我是区域A中的一个absolute且不设置z-index</div>
             </div>
-            <div class="b">
+            <div class="child b">
                 <p>区域B:relative</p>
             </div>
         </div>
         <div class="comments">
             <p><small>demo-two注释：浮层 tips <em>不可以覆盖</em>在其父级元素 A 的兄弟元素 B 之上。</small></p>
-            <p><small>原因是父级 A、B 都是相对定位，B 在 A 之后出现，所以 B 高于 A ，所以作为 A 的子元素，不可以覆盖 B </small></p>
+            <p><small>原因是父级 A、B 都是相对定位，B 在 A 之后出现，所以 B 高于 A 和 A 中没有创建层叠上下文（没有设置z-index或者z-index:atuo 或 <= 0）的子元素，所以tips不可以覆盖 B </small></p>
+        </div>
+        <h3>- demo-three（非IE6/7）</h3>
+        <div class="container demo-three">
+            <div class="child a">
+                <p>区域A:relative</p>
+                <div class="tips">我是区域A中的一个absolute且设置z-index: 99</div>
+            </div>
+            <div class="child b">
+                <p>区域B:relative</p>
+            </div>
         </div>
         <div class="comments">
-            <p></p>
+            <p><small>demo-two注释：浮层 tips <em>又可以覆盖</em>在其父级元素 A 的兄弟元素 B 之上。</small></p>
+            <p><small>原因是父级 A、B 都是相对定位，B 在 A 之后出现， 原本 B 高于 A 和 A 中没有创建层叠上下文（没有设置z-index或者z-index:atuo or <= 0）的子元素，但是tips创建了层叠上下文（设置z-index: > 0），所以tips又可以覆盖 B </small></p>
+        </div>
+        <div class="iebug">
+            <p><small>demo-three的效果是在非IE6/7之下结果。在IE6/7下，A、B 由于相对定位都创建了新的局部层叠上下文，而 A 创建的层叠上下文又比 B 低，我们看到 tips 并没能遮住 B，也就是说 tips 无法越过父级，这也就是在IE6/7下常出现覆盖Bug的根源。</small></p>
         </div>
     </section>
 </body>

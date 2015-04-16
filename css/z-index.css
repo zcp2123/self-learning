@@ -31,23 +31,30 @@ em{
 }
 .demo .comments{
     padding-left: 1em;
-    border: 1px dashed #f00;
+    background-color: #e4e4e4;
 }
-.demo .demo-one,
-.demo .demo-two{
+.demo .iebug{
+    padding-left: 1em;
+    color: oldlace;
+    background-color: lightcoral;
+}
+.demo .container{
     margin: 0 auto;
     border: 1px dashed #999;
     width: 700px;
     background: lightyellow;
 }
-.demo .a{
+.demo .child{
     margin: 5px;
     padding: 16px;
     border-radius: 5px;
+}
+.demo .a{
     background: lightgreen;
 }
 .demo .a .tips{
     position: absolute;
+    top: 30px;
     left: 200px;
     padding: 10px;
     border: 1px solid #aaa;
@@ -55,10 +62,7 @@ em{
     background: #fff;
 }
 .demo .b{
-    margin: 5px;
-    padding: 16px;
-    border-radius: 5px;
-    background: #eee;
+    background: lightblue;
 }
 
 .demo-one .a{
