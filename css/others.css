@@ -1,0 +1,38 @@
+/* common */
+body{
+    font-family: Arial, 'Microsoft YaHei';
+    line-height: 1.5;
+}
+section,
+h1,h2,h3,
+ul,ol,li{
+    margin: 10px;
+}
+section{
+    border: 1px solid orange;
+    width: 800px
+}
+em{
+    padding: 0 10px 0 5px;
+    background: lightcoral;
+    color: oldlace;
+}
+p{
+    padding-left: 1em;
+}
+
+/* color */
+.colorname p{color:green;}
+.hex p{color:#ff0000;}
+.rgb p{color:rgb(0,0,0);}
+.rgba p{color:rgba(0,0,0,.5);}
+.hsl p{color:hsl(240,50%,50%);}
+.hsla p{color:hsla(240,50%,50%,.5);}
+.transparent p{color:transparent;}
+/* color */
+
+/* opacity */
+/* opacity */
+
+/* font */
+/* font */

@@ -6,7 +6,7 @@ body{
 section{
     width: 800px;
 }
-section,h1,h2,h3{
+section,h1,h2,h3,ul,li{
     margin: 10px;
 }
 p{
@@ -16,7 +16,7 @@ strong{
     margin-left: -3em;
 }
 em{
-    padding: 0 10px 0 5px;
+    padding: 0 5px 0 5px;
     background: lightcoral;
     color: oldlace;
 }
@@ -25,6 +25,9 @@ em{
 .demo{
     width: 800px;
     border: 1px solid orange;
+}
+.demo img{
+    width: 100%;
 }
 .demo p{
     padding-left: 5px;
@@ -83,4 +86,88 @@ em{
 }
 .demo-three .a .tips{
     z-index: 99;
+}
+.demo .opacity{
+    width: 150px;
+    height: 150px;
+    margin-right: auto;
+}
+.demo-four .a{
+    opacity: .8;
+}
+.demo-four .b{
+    float: left;
+    margin: -120px 0 0 30px;
+}
+.demo-four .c{
+    background-color: lightpink;
+    margin: -90px 0 0 60px;
+}
+.demo-five .a{
+    position: relative;
+}
+.demo-five .b{
+    opactiy: .8;
+    margin: -120px 0 0 30px;
+}
+.demo-five .c{
+    background-color: lightpink;
+    margin: -120px 0 0 60px;
+}
+
+/* summary */
+.summary{
+    border: 1px solid orange;
+}
+.summary .order{
+    margin-left: 20px;
+    width: 350px;
+    border: 1px dashed #aaa;
+}
+.summary .order li{
+    width: 300px;
+    text-align: center;
+}
+.summary .comments p{
+    padding-left: 10px;
+    text-indent: 2em;
+}
+.summary .comments ul{
+    padding-left: 20px;
+}
+.summary .topscroll a,
+.summary .topscroll span{
+    display: inline-block;
+    overflow: hidden;
+    width: 36px;
+    height: 36px;
+    vertical-align: top;
+    font-size: 12px;
+    -webkit-transition:all .3s ease-in;
+    -moz-transition:all .3s ease-in;
+    transition:all .3s ease-in;
+}
+.summary .topscroll span{
+    position: relative;
+    z-index: -1;
+    background-color: #eee;
+}
+.summary .topscroll a {
+    border: 1px solid #ddd;
+    background: url(../images/6.png) no-repeat;
+    color: #000;
+    font: 12px/36px arial;
+    text-align: center;
+    text-decoration: none;
+}
+.summary .topscroll a:hover{
+    background-position:0 -39px;
+    color:#fff;
+}
+.summary .topscroll a:hover span{
+    background-color:#999;
+}
+.summary .topscroll img{
+    width: 200px;
+    padding-left: 20px;
 }

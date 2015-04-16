@@ -62,8 +62,80 @@
             <p><small>原因是父级 A、B 都是相对定位，B 在 A 之后出现， 原本 B 高于 A 和 A 中没有创建层叠上下文（没有设置z-index或者z-index:atuo or <= 0）的子元素，但是tips创建了层叠上下文（设置z-index: > 0），所以tips又可以覆盖 B </small></p>
         </div>
         <div class="iebug">
-            <p><small>demo-three的效果是在非IE6/7之下结果。在IE6/7下，A、B 由于相对定位都创建了新的局部层叠上下文，而 A 创建的层叠上下文又比 B 低，我们看到 tips 并没能遮住 B，也就是说 tips 无法越过父级，这也就是在IE6/7下常出现覆盖Bug的根源。</small></p>
+            <p><small>上面demo-three的效果是在非IE6/7之下结果。在IE6/7下，A、B 由于相对定位都创建了新的局部层叠上下文，而 A 创建的层叠上下文又比 B 低，而 tips 无法越过父级，所以我们看到 tips 并没能遮住 B，这也就是在IE6/7下常出现覆盖Bug的根源。</small></p>
         </div>
+        <img src="../../images/4.png" alt="iebug">
+    </section>
+    <section>
+        <h2>opacity与z-index</h2>
+        <p><strong>关系：</strong>当opacity值小于1时，该元素拥有层叠级别且相当于z-index:0或auto，但不能定义 z-index ，除非本身是定位元素</p>
+    </section>
+    <section class="demo">
+        <h3>- demo-four</h3>
+        <div class="container demo-four">
+            <div class="opacity a">
+                <p>区域A:opacity:.8</p>
+            </div>
+            <div class="opacity b">
+                <p>区域B:float</p>
+            </div>
+            <div class="opacity c">
+                <p>区域C:normal</p>
+            </div>
+        </div>
+        <div class="comments">
+            <p><small>A 设置了opacity，将可以遮住 B(float元素)、C(常规流)，下面我们看看能不能盖住定位元素</small></p>
+        </div>
+        <h3>- demo-five</h3>
+        <div class="container demo-five">
+            <div class="opacity a">
+                <p>区域A:relative</p>
+            </div>
+            <div class="opacity b">
+                <p>区域B:opacity:.8</p>
+            </div>
+            <div class="opacity c">
+                <p>区域C:normal</p>
+            </div>
+        </div>
+        <div class="comments">
+            <p><small>A 设置了relative但是没有显示设置z-index，B 设置了opacity，而 B 在 A 之后出现，但是 A 却覆盖了 B ，所以 A 的层叠级高于 B ，所以未设置z-index的定位元素的层叠级仍然高于opacity的层叠级</small></p>
+        </div>
+    </section>
+    <section class="summary">
+        <h1>Summary</h1>
+        <h2>z轴上的默认层叠顺序如下：</h2>
+        <div class="order">
+            <ul>
+                <li>position(非static + 显示z-index)</li>
+                <li><em>^</em></li>
+                <li>position(非static + 无显示z-index)</li>
+                <li><em>^</em></li>
+                <li>opacity元素(<1，遮挡文本)</li>
+                <li><em>^</em></li>
+                <li>float(不会遮挡文本)</li>
+                <li><em>^</em></li>
+                <li>常规流中的元素(按照html中顺序)</li>
+                <li><em>^</em></li>
+                <li>根元素的边界和背景</li>
+            </ul>
+        </div>
+        <h2>demo:z-index用途:图片替换</h2>
+        <div class="comments">
+            <p>我们聊聊图文替换的事，相对于使用较广的方案如：缩进正/负值（正/负text-indent）、超小字体、margin溢出、padding溢出、line-height溢出、透明字体、display:none、visibility:hidden等方案而言，使用 z-index 负值的方案，有一些明显的优势：</p>
+            <ul>
+                <li>- 无需考虑是否会有<em>性能问题</em></li>
+                <li>- 没有像类似超小字体和透明字体一样的方案会<em>需要一些额外的hack</em>；</li>
+                <li>- 不像display:none方案那样有<em>SEO欺骗嫌疑</em>；</li>
+                <li>- <em>当图片加载失败时，可以显示文字</em>；</li>
+            </ul>
+        </div>
+        <section class="container topscroll">
+            <a href="#nav" title="回到顶部"><span>TOP▲</span></a>
+            <img src="../../images/5.png" alt="回到顶部">
+        </section>
+        </section>
+
     </section>
 </body>
 </html>

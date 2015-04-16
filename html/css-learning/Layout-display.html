@@ -10,12 +10,38 @@
 <body>
 	<h1>display</h1>
     <section>
-        <h2><em>display: none</em>与<em>visibility: hidden</em>的区别</h2>
+        <h2>1、display: none与visibility: hidden的区别</h2>
         <ul>
             <li><p><strong>—</strong>display:none 会让元素完全从渲染树中消失，渲染的时候<em>不占据任何空间</em>。visibility: hidden 不会让元素从渲染树消失，渲染师元素继续<em>占据空间</em>，只是内容不可见</p></li>
             <li><p><strong>—</strong>display: none;是非继承属性，<em>子孙节点消失由于元素从渲染树消失造成</em>，通过修改子孙节点属性无法显示；visibility: hidden;是继承属性，<em>子孙节点消失由于继承了hidden，通过设置visibility: visible;可以让子孙节点显式</em></p></li>
             <li><p><strong>—</strong>修改常规流中元素的display通常会<em>造成文档重排</em>。修改visibility属性只会<em>造成本元素的重绘。</em></p></li>
             <li><p><strong>—</strong>读屏器<em>不会读取</em>display: none;元素内容；<em>会读取</em>visibility: hidden;元素内容</p></li>
+        </ul>
+    </section>
+    <section>
+        <h2>2、display、float和position的关系</h2>
+        <ul>
+            <li>
+                <p><strong>如果：</strong><em>display为none</em>，那么position和float都不起作用</p>
+            </li>
+            <li>
+                <p><strong>否则：</strong><em>position为absolute或者fixed</em>，元素是绝对定位的，float不起作用，display根据下图进行调整</p>
+            </li>
+            <li>
+                <p><strong>否则：</strong><em>display为flex或inline-flex</em>，float不起作用</p>
+            </li>
+            <li>
+                <p><strong>否则：</strong><em>float不为none</em>，元素是浮动的，display根据下图进行调整</p>
+            </li>
+            <li>
+                <p><strong>否则：</strong><em>元素是根元素</em>，display根据下表进行调整</p>
+            </li>
+            <li>
+                <p><strong>否则：</strong>其他情况均不会隐式的对display的值进行调整</p>
+            </li>
+            <li>
+                <img src="../../images/2.png" alt="display调整">
+            </li>
         </ul>
     </section>
 
